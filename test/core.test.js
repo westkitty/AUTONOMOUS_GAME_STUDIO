@@ -333,3 +333,34 @@ test('every Unlearning changes a real parameter', () => {
   r.upgrades.push('breath'); assert.ok(G.breathBonusOf(r) >= 6, 'Longer Breath adds breath');
   r.upgrades.push('hush'); assert.ok(G.hushBonusOf(r) >= 2, 'Hush Sense adds hush');
 });
+
+
+test('every Unlearning fires in play, not just in parameters', () => {
+  {
+    const r = G.createRun({ seed: 201 }); r.upgrades.push('secondwind');
+    const nb = G.neighbours(r, r.p.cell)[0];
+    r.readers[0].trap = nb.cell; r.readers[0].conf = 0.2;
+    const b = r.p.breath;
+    G.act(r, { type: 'move', dir: nb.d });
+    assert.equal(r.p.breath - b, 5, '-1 move +6 refund');
+  }
+  {
+    const r = G.createRun({ seed: 202 }); r.upgrades.push('motewind');
+    const nb = G.neighbours(r, r.p.cell)[0];
+    r.motes = [nb.cell];
+    const b = r.p.breath;
+    G.act(r, { type: 'move', dir: nb.d });
+    assert.equal(r.p.breath - b, 4, '-1 move +5 mote');
+  }
+  {
+    const r = G.createRun({ seed: 203 });
+    const base = G.startlePayoff(0.9, r).stun;
+    r.upgrades.push('stun');
+    assert.equal(G.startlePayoff(0.9, r).stun, base + 1);
+  }
+  {
+    const r = G.createRun({ seed: 204 }); r.upgrades.push('nerve');
+    G.newDepth(r);
+    assert.equal(r.p.nerve, 2);
+  }
+});
