@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>TELL — it is learning how you move</title>
+<meta name="description" content="A turn-based game where every monster is a statistical model of your own habits.">
+<link rel="stylesheet" href="/src/web/style.css">
+</head>
+<body>
+<div id="app">
+  <canvas id="stage" aria-label="Game board"></canvas>
+
+  <!-- HUD -->
+  <div id="hud" class="hidden">
+    <div class="hudrow">
+      <div class="stat" id="stat-composure" title="Composure — how much being read you can take">
+        <span class="label">Composure</span><span class="pips" id="composure"></span>
+      </div>
+      <div class="stat" id="stat-breath" title="Breath — your remaining moves">
+        <span class="label">Breath</span><span class="num" id="breath">0</span>
+        <div class="bar"><i id="breathbar"></i></div>
+      </div>
+      <div class="stat" id="stat-nerve" title="Nerve — spend it to Exhale for time, or Decoy to lie">
+        <span class="label">Nerve</span><span class="pips" id="nerve"></span>
+      </div>
+    </div>
+    <div class="hudrow center">
+      <div class="depth" id="depth">Depth 1</div>
+      <div class="motes" id="motes">4 motes</div>
+    </div>
+    <div id="readerrail"></div>
+    <div id="toast" role="status" aria-live="polite"></div>
+  </div>
+
+  <!-- touch / click controls -->
+  <div id="pad" class="hidden">
+    <button class="pbtn up"    data-dir="0" aria-label="Move up">&#9650;</button>
+    <button class="pbtn left"  data-dir="3" aria-label="Move left">&#9664;</button>
+    <button class="pbtn wait"  data-dir="4" aria-label="Wait">&#9679;</button>
+    <button class="pbtn right" data-dir="1" aria-label="Move right">&#9654;</button>
+    <button class="pbtn down"  data-dir="2" aria-label="Move down">&#9660;</button>
+  </div>
+  <div id="actions" class="hidden">
+    <button id="btn-exhale" class="act">Exhale<span class="cost" id="cost-exhale"></span></button>
+    <button id="btn-decoy"  class="act">Decoy<span class="cost" id="cost-decoy"></span></button>
+    <button id="btn-habit"  class="act">Tells<span class="cost">H</span></button>
+  </div>
+
+  <!-- screens -->
+  <div id="screen-title" class="screen">
+    <div class="titlescreen">
+      <h1 class="wordmark">TELL</h1>
+      <p class="tagline">It is learning how you move.</p>
+      <div class="menu">
+        <button id="btn-new" class="big">Begin the descent</button>
+        <button id="btn-continue" class="big hidden">Continue</button>
+        <button id="btn-settings" class="big">Settings</button>
+        <button id="btn-how" class="big">How to play</button>
+      </div>
+      <p class="best" id="bestline"></p>
+    </div>
+  </div>
+
+  <div id="screen-how" class="screen hidden"><div class="panel">
+    <h2>How to play</h2>
+    <div class="howbody">
+      <p><b>You are a mote of light</b> in a dark that is learning you.</p>
+      <p><b>Collect every mote</b>, then reach the <b>Gate</b> to descend. There are five depths.</p>
+      <p><b>The Readers are not monsters. They are models.</b> Each one watches a different
+         pattern in your movement and, <em>before you move</em>, marks the tile it believes you
+         will step onto. Step there and you lose Composure.</p>
+      <ul class="keys">
+        <li><kbd>&#8593;&#8595;&#8592;&#8594;</kbd> / <kbd>WASD</kbd> move</li>
+        <li><kbd>Space</kbd> wait (waiting is also a habit)</li>
+        <li><kbd>E</kbd> Exhale &mdash; spend Nerve for Breath</li>
+        <li><kbd>Q</kbd> then a direction &mdash; Decoy, plant a lie</li>
+        <li><kbd>H</kbd> show your Tells &mdash; the map of your own habits</li>
+        <li><kbd>Esc</kbd> menu</li>
+      </ul>
+      <p class="crux"><b>The crux:</b> the fastest route is a repeated route, and repetition is
+         exactly what a Reader learns. When a Reader is <em>certain</em> about you and you go
+         somewhere else, it is <b>startled</b> &mdash; and a startle is the only real source of
+         Breath. You cannot outrun the dark. You have to lie to it.</p>
+    </div>
+    <div class="menu"><button class="big close-how">Back</button></div>
+  </div></div>
+
+  <div id="screen-settings" class="screen hidden"><div class="panel">
+    <h2>Settings</h2>
+    <div class="setlist" id="setlist"></div>
+    <div class="menu"><button class="big close-settings">Back</button></div>
+  </div></div>
+
+  <div id="screen-choice" class="screen hidden"><div class="panel">
+    <h2>You descend</h2>
+    <p class="sub">Choose one Unlearning. It lasts the rest of the run.</p>
+    <div class="choices" id="choices"></div>
+  </div></div>
+
+  <div id="screen-end" class="screen hidden"><div class="panel">
+    <h2 id="endtitle">Caught</h2>
+    <p class="sub" id="endtext"></p>
+    <div class="endstats" id="endstats"></div>
+    <div class="menu">
+      <button class="big" id="btn-again">Descend again</button>
+      <button class="big" id="btn-menu">Title</button>
+    </div>
+  </div></div>
+
+  <div id="screen-pause" class="screen hidden"><div class="panel">
+    <h2>Paused</h2>
+    <div class="menu">
+      <button class="big" id="btn-resume">Resume</button>
+      <button class="big" id="btn-pause-settings">Settings</button>
+      <button class="big" id="btn-restart">Abandon run</button>
+    </div>
+  </div></div>
+</div>
+<script type="module" src="/src/web/main.js"></script>
+</body>
+</html>

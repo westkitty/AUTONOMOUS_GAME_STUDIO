@@ -1,0 +1,14 @@
+{
+  "name": "autonomous-game-studio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Autonomous experimental game studio: research -> invention -> prototypes -> production -> playtesting -> QA",
+  "scripts": {
+    "proto": "node prototypes/judge.mjs",
+    "sim": "node tools/sim.mjs",
+    "test": "node --test test/core.test.js",
+    "start": "node tools/serve.mjs",
+    "smoke": "node tools/domsmoke.mjs"
+  }
+}

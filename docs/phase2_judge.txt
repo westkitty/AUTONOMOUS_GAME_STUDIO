@@ -1,0 +1,11 @@
+=== CANDIDATE A: TELL (the adversary is a model of you) ===
+  greedy   {"winRate":0.39,"causes":{"caught":244,"complete":156},"avgHits":3.05,"avgTurns":18.2,"avgMotes":5.52,"avgStartles":0,"avgTurnsLeft":41.8}
+  random   {"winRate":0.0025,"causes":{"timeout":244,"caught":155,"complete":1},"avgHits":3.33,"avgTurns":56.82,"avgMotes":3.24,"avgStartles":1.02,"avgTurnsLeft":5.56}
+  dodger   {"winRate":0.64,"causes":{"timeout":144,"complete":256},"avgHits":0,"avgTurns":50.51,"avgMotes":6.87,"avgStartles":6.36,"avgTurnsLeft":23.68}
+  baiter   {"winRate":0.485,"causes":{"complete":194,"timeout":206},"avgHits":0,"avgTurns":56.51,"avgMotes":6.97,"avgStartles":0.84,"avgTurnsLeft":6.08}
+  expert   {"winRate":0.8525,"causes":{"timeout":59,"complete":341},"avgHits":0,"avgTurns":31.05,"avgMotes":7.61,"avgStartles":0.14,"avgTurnsLeft":29.38}
+  skill gradient (best - worst win rate): 0.8500
+  degenerate-strategy check (random wins?): false
+  skill-ceiling check (expert/baiter > dodger?): true
+
+=== CANDIDATE B: ECHO (temporal self-cooperation) ===

@@ -1,0 +1,267 @@
+TELL simulation — 400 sessions per agent, 8 agents
+==============================================================================
+
+### greedy
+{
+ "sessions": 400,
+ "completionRate": 0.005,
+ "avgDepthReached": 2.695,
+ "lossCauses": {
+  "caught": 398,
+  "escaped": 2
+ },
+ "perDepthClearRate": {
+  "1": 1,
+  "2": 0.505,
+  "3": 0.307,
+  "4": 0.226,
+  "5": 0.143
+ },
+ "avgTurns": 21.78,
+ "avgHits": 5.532,
+ "avgStartles": 1.052,
+ "avgDecoys": 0,
+ "avgExhales": 0,
+ "decoyUsingSessions": 0,
+ "avgHushSteps": 3.353,
+ "avgNerveAtEnd": 5.625,
+ "avgBreathAtEnd": 36.965,
+ "breathEndOnWins": 71.5,
+ "nerveEndOnWins": 6,
+ "softlockSessions": 0,
+ "longestStuckRun": 0
+}
+
+### random
+{
+ "sessions": 400,
+ "completionRate": 0,
+ "avgDepthReached": 1,
+ "lossCauses": {
+  "smothered": 352,
+  "caught": 48
+ },
+ "perDepthClearRate": {
+  "1": 0,
+  "2": null,
+  "3": null,
+  "4": null,
+  "5": null
+ },
+ "avgTurns": 38.11,
+ "avgHits": 1.462,
+ "avgStartles": 0.575,
+ "avgDecoys": 0,
+ "avgExhales": 0,
+ "decoyUsingSessions": 0,
+ "avgHushSteps": 1.778,
+ "avgNerveAtEnd": 1.778,
+ "avgBreathAtEnd": 0.735,
+ "breathEndOnWins": 0,
+ "nerveEndOnWins": 0,
+ "softlockSessions": 0,
+ "longestStuckRun": 0
+}
+
+### turtle
+{
+ "sessions": 400,
+ "completionRate": 0,
+ "avgDepthReached": 1,
+ "lossCauses": {
+  "caught": 400
+ },
+ "perDepthClearRate": {
+  "1": 0,
+  "2": null,
+  "3": null,
+  "4": null,
+  "5": null
+ },
+ "avgTurns": 7,
+ "avgHits": 4,
+ "avgStartles": 0,
+ "avgDecoys": 0,
+ "avgExhales": 0,
+ "decoyUsingSessions": 0,
+ "avgHushSteps": 0,
+ "avgNerveAtEnd": 0,
+ "avgBreathAtEnd": 25,
+ "breathEndOnWins": 0,
+ "nerveEndOnWins": 0,
+ "softlockSessions": 0,
+ "longestStuckRun": 0
+}
+
+### cautious
+{
+ "sessions": 400,
+ "completionRate": 0.403,
+ "avgDepthReached": 4.295,
+ "lossCauses": {
+  "escaped": 161,
+  "caught": 238,
+  "smothered": 1
+ },
+ "perDepthClearRate": {
+  "1": 1,
+  "2": 0.925,
+  "3": 0.811,
+  "4": 0.827,
+  "5": 0.649
+ },
+ "avgTurns": 42.825,
+ "avgHits": 6.117,
+ "avgStartles": 3.467,
+ "avgDecoys": 0,
+ "avgExhales": 0,
+ "decoyUsingSessions": 0,
+ "avgHushSteps": 9.325,
+ "avgNerveAtEnd": 6.798,
+ "avgBreathAtEnd": 38.727,
+ "breathEndOnWins": 46.068,
+ "nerveEndOnWins": 7.118,
+ "softlockSessions": 0,
+ "longestStuckRun": 1
+}
+
+### modelAware
+{
+ "sessions": 400,
+ "completionRate": 0.642,
+ "avgDepthReached": 4.55,
+ "lossCauses": {
+  "smothered": 97,
+  "escaped": 257,
+  "caught": 46
+ },
+ "perDepthClearRate": {
+  "1": 1,
+  "2": 0.95,
+  "3": 0.897,
+  "4": 0.877,
+  "5": 0.86
+ },
+ "avgTurns": 55.81,
+ "avgHits": 4.008,
+ "avgStartles": 3.683,
+ "avgDecoys": 0,
+ "avgExhales": 0.463,
+ "decoyUsingSessions": 0,
+ "avgHushSteps": 18.815,
+ "avgNerveAtEnd": 5.5,
+ "avgBreathAtEnd": 30.863,
+ "breathEndOnWins": 42.463,
+ "nerveEndOnWins": 7.062,
+ "softlockSessions": 0,
+ "longestStuckRun": 2
+}
+
+### liar
+{
+ "sessions": 400,
+ "completionRate": 0.623,
+ "avgDepthReached": 4.505,
+ "lossCauses": {
+  "smothered": 99,
+  "escaped": 249,
+  "caught": 52
+ },
+ "perDepthClearRate": {
+  "1": 1,
+  "2": 0.943,
+  "3": 0.894,
+  "4": 0.855,
+  "5": 0.865
+ },
+ "avgTurns": 57.208,
+ "avgHits": 4,
+ "avgStartles": 4.548,
+ "avgDecoys": 7.388,
+ "avgExhales": 0.052,
+ "decoyUsingSessions": 0.995,
+ "avgHushSteps": 17.86,
+ "avgNerveAtEnd": 2.792,
+ "avgBreathAtEnd": 31.067,
+ "breathEndOnWins": 43.233,
+ "nerveEndOnWins": 3.94,
+ "softlockSessions": 0,
+ "longestStuckRun": 2
+}
+
+### humanlike
+{
+ "sessions": 400,
+ "completionRate": 0.532,
+ "avgDepthReached": 4.385,
+ "lossCauses": {
+  "caught": 149,
+  "escaped": 213,
+  "smothered": 38
+ },
+ "perDepthClearRate": {
+  "1": 0.998,
+  "2": 0.925,
+  "3": 0.881,
+  "4": 0.803,
+  "5": 0.816
+ },
+ "avgTurns": 57.575,
+ "avgHits": 5.61,
+ "avgStartles": 4.008,
+ "avgDecoys": 6.905,
+ "avgExhales": 0.22,
+ "decoyUsingSessions": 0.995,
+ "avgHushSteps": 12.3,
+ "avgNerveAtEnd": 3.237,
+ "avgBreathAtEnd": 28.323,
+ "breathEndOnWins": 34.648,
+ "nerveEndOnWins": 4.014,
+ "softlockSessions": 0,
+ "longestStuckRun": 2
+}
+
+### perfect
+{
+ "sessions": 400,
+ "completionRate": 0.63,
+ "avgDepthReached": 4.5,
+ "lossCauses": {
+  "smothered": 95,
+  "escaped": 252,
+  "caught": 53
+ },
+ "perDepthClearRate": {
+  "1": 1,
+  "2": 0.94,
+  "3": 0.891,
+  "4": 0.863,
+  "5": 0.872
+ },
+ "avgTurns": 57.248,
+ "avgHits": 3.955,
+ "avgStartles": 5.135,
+ "avgDecoys": 7.737,
+ "avgExhales": 0.03,
+ "decoyUsingSessions": 1,
+ "avgHushSteps": 17.587,
+ "avgNerveAtEnd": 2.75,
+ "avgBreathAtEnd": 31.977,
+ "breathEndOnWins": 44.472,
+ "nerveEndOnWins": 3.849,
+ "softlockSessions": 0,
+ "longestStuckRun": 2
+}
+
+==============================================================================
+AUTOMATED VERDICTS
+dominant strategy            : modelAware (0.642)
+degenerate win (random/turtle): random=0 turtle=0
+greedy       DECOY UNUSED, BREATH RUNAWAY, NERVE RUNAWAY, SPIKE at clear<0.35
+random       ok
+turtle       ok
+cautious     DECOY UNUSED, BREATH RUNAWAY, NERVE RUNAWAY
+modelAware   DECOY UNUSED, BREATH RUNAWAY, NERVE RUNAWAY
+liar         BREATH RUNAWAY
+humanlike    BREATH RUNAWAY
+perfect      BREATH RUNAWAY
